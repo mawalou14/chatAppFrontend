@@ -8,3 +8,10 @@ services:
       # Only the development stage from the 
       # Docker files
       target: development 
+
+      # Mount our host dir to the docker container
+      # Mount api directory (../chat-app-api) to (:) docker container
+      # Which is (/mawalou14/src/app)
+      volumes:
+        - ../chat-app-api:/mawalou14/src/app
+        - ../mawalou14/src/app/node_modules
