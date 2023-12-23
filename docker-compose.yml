@@ -51,4 +51,7 @@ services:
 
   postgres_admin:
     image: dpage/pgadmin4:4.28
+    depends_on:
+      - postgres
+      
 
