@@ -53,5 +53,7 @@ services:
     image: dpage/pgadmin4:4.28
     depends_on:
       - postgres
-      
+    environment:
+      - PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD: password
 
