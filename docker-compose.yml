@@ -35,3 +35,8 @@ services:
     volumes:
       -../chatAppFrontend:mawalou14/src/app
       - /mawalou14/src/app/node_modules
+    ports:
+      - 4200:4200
+    links:
+      - api
+      
