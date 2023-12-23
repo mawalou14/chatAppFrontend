@@ -12,6 +12,7 @@ services:
       # Mount our host dir to the docker container
       # Mount api directory (../chat-app-api) to (:) docker container
       # Which is (/mawalou14/src/app)
+      # Reflect File changes from host to container
       volumes:
         - ../chat-app-api:/mawalou14/src/app
         - ../mawalou14/src/app/node_modules
