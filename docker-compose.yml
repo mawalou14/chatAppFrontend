@@ -34,4 +34,4 @@ services:
     command: npm run start
     volumes:
       -../chatAppFrontend:mawalou14/src/app
-      
+      - /mawalou14/src/app/node_modules
