@@ -1,1 +1,10 @@
-version
+version: "3.8"
+
+services:
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: ../chat-app-api
+      # Only the development stage from the 
+      # Docker files
+      target: development 
