@@ -32,3 +32,6 @@ services:
       dockerfile: Dockerfile
       context: ../chatAppFrontend
     command: npm run start
+    volumes:
+      -../chatAppFrontend:mawalou14/src/app
+      
