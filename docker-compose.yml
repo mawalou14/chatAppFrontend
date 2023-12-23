@@ -16,3 +16,7 @@ services:
       volumes:
         - ../chat-app-api:/mawalou14/src/app
         - ../mawalou14/src/app/node_modules
+      # RUN in debug mode: npm run start:Debug 
+      # ---> Also start your vscode debugger
+      # Run in dev mode: npm run start:dev
+      command: npm run start:dev
