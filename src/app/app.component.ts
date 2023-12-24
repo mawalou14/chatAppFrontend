@@ -13,5 +13,5 @@ export class AppComponent {
 
   title = 'chatAppFrontend';
 
-  // testValue: Observable<Test> = this.testSrv.getTest();
+  testValue: Observable<Test> = this.testSrv.getTest();
 }
