@@ -5,30 +5,20 @@ services:
     build:
       dockerfile: Dockerfile
       context: ../chat-app-api
-      # Only the development stage from the 
-      # Docker files
-      target: development 
-
-      # Mount our host dir to the docker container
-      # Mount api directory (../chat-app-api) to (:) docker container
-      # Which is (/mawalou14/src/app)
-      # Reflect File changes from host to container
-      volumes:
-        - ../chat-app-api:/mawalou14/src/app
-        - ../mawalou14/src/app/node_modules
-      # RUN in debug mode: npm run start:Debug 
-      # ---> Also start your vscode debugger
-      # Run in dev mode: npm run start:dev
-      command: npm run start:dev
-      depends_on:
-        - postgre 
-      environment:
-        DATABASE_URL: postgres://user:password@postgres:5432/db
-        NODE_ENV: development
-        PORT: 3000
-      ports:
-        - 3000:3000
-        - 9229:9229
+      target: development # Only the development stage from the Docker files
+    volumes:
+      - ../chat-app-api:/mawalou14/src/app
+      - ../mawalou14/src/app/node_modules
+    command: npm run start:dev # Run in dev mode: npm run start:dev
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgres://user:password@postgres:5432/db
+      NODE_ENV: development
+      PORT: 3000
+    ports:
+      - 3000:3000
+      - 9229:9229
 
   frontend:
     build:
@@ -36,13 +26,13 @@ services:
       context: ../chatAppFrontend
     command: npm run start
     volumes:
-      -../chatAppFrontend:mawalou14/src/app
+      - ../chatAppFrontend:/mawalou14/src/app
       - /mawalou14/src/app/node_modules
     ports:
       - 4200:4200
     links:
       - api
-    
+
   postgres:
     image: postgres:10.4
     environment:
@@ -57,8 +47,7 @@ services:
     depends_on:
       - postgres
     environment:
-      - PGADMIN_DEFAULT_EMAIL: admin@admin.com
-      - PGADMIN_DEFAULT_PASSWORD: password
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: password
     ports: 
       - 5050:80
-
