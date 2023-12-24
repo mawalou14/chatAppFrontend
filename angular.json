@@ -68,8 +68,7 @@
               "browserTarget": "chatAppFrontend:build:production"
             },
             "development": {
-              "browserTarget": "chatAppFrontend:build:development",
-              "proxyConfig": "src/proxy.conf.json"
+              "browserTarget": "chatAppFrontend:build:development"
             }
           },
           "defaultConfiguration": "development"
