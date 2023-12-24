@@ -9,9 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  constructor(private testSrv: TestService) {  }
+  constructor(private testSrv: TestService) { }
 
   title = 'chatAppFrontend';
 
-  testValue: Observable<Test> = this.testSrv.getTest();
+  // testValue: Observable<Test> = this.testSrv.getTest();
 }
